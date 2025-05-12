@@ -1,107 +1,122 @@
-# Detecting Signs of Depression from Social Media Text
+# Depression Detection Pilot Study
 
-This repository contains the code of our winning solution for [the Shared Task on Detecting Signs of Depression
-from Social Media Text](https://competitions.codalab.org/competitions/36410) at [LT-EDI-ACL2022](https://sites.google.com/view/lt-edi-2022/home).
+This pilot study is an extension of the research by Poświata & Perełkiewicz (2022), aiming to verify the feasibility of data mining and text analytics for early depression risk detection from social media, and to test the effectiveness of adding engineered features to pre-trained language models.
 
-More information can be found in the following paper: [OPI@LT-EDI-ACL2022: Detecting Signs of Depression from Social Media Text using RoBERTa Pre-trained Language Models](https://aclanthology.org/2022.ltedi-1.40/).
+## Experiment Design
 
-## Task description
+This experiment consists of two main parts:
 
-The task was to create a system that, given social media posts in English, should detect the level of depression as **‘not depressed’**, **‘moderately depressed’** or **‘severely depressed’**.
+1. **Baseline Model**: Using DistilBERT for a three-class classification task (not depressed, moderately depressed, severely depressed).
+2. **Modified Model**: Combining DistilBERT representations with engineered features such as VADER sentiment scores and first-person singular pronoun usage frequency.
+
+## Dataset
+
+The experiment uses a subset of the LT-EDI 2022 shared task dataset (approximately 2,000 posts), created through stratified random sampling:
+- Training set: 1,400 posts
+- Validation set: 200 posts
+- Test set: 400 posts
 
 ## Requirements
 
-1. python 3.8+
-2. transformers	4.13.0
-3. simpletransformers 0.63.7
-4. pandas 1.2.5
-5. scikit-learn	0.23.1
-6. tqdm	4.62.3
-
-## Prepared datasets
-
-We prepared two datasets. The first is a preprocessed dataset provided by the competition organizers.
-The second, Reddit Depression Corpora, was used to train the DepRoBERTa language model.
- 
-### Preprocessed competition dataset
-
-Dataset was prepared by removing duplicates and transfer some examples from the dev set to the train set.
-Files are available in the [./data/preprocessed_dataset](data/preprocessed_dataset) folder.
-
-### Reddit Depression Corpora
-
-We built a corpus based on **[the Reddit Mental Health Dataset](https://zenodo.org/record/3941387#.Y5L6O_fMKUl)**
-(Low et al., 2020) and a [dataset](https://www.kaggle.com/datasets/xavrig/reddit-dataset-rdepression-and-rsuicidewatch)
-of **20,000** posts from **r/depression** and **r/SuicideWatch** subreddits. We filtered the data appropriately, leaving
-mainly those related to **depression (31,2%)**, **anxiety (20,5%)** and **suicide (18.1%)**, which resulted in a corpora consisting
-of **396,968** posts.
-
-## Trained models
-
-### DepRoBERTa
-
-**DepRoBERTa (RoBERTa for Depression Detection)** - language model based on RoBERTa-large and further pre-trained on the
-Reddit Depression Corpora.
-
-[rafalposwiata/deproberta-large-v1](https://huggingface.co/rafalposwiata/deproberta-large-v1)
-
-### Models for detecting depression
-
-[rafalposwiata/roberta-large-depression](https://huggingface.co/rafalposwiata/roberta-large-depression)
-
-[rafalposwiata/deproberta-large-depression](https://huggingface.co/rafalposwiata/deproberta-large-depression)
-
-## Citation
-If you use the code, models or datasets from this repository, please cite:
-
-```bib
-@inproceedings{poswiata-perelkiewicz-2022-opi,
-    title = "{OPI}@{LT}-{EDI}-{ACL}2022: Detecting Signs of Depression from Social Media Text using {R}o{BERT}a Pre-trained Language Models",
-    author = "Po{\'s}wiata, Rafa{\l} and Pere{\l}kiewicz, Micha{\l}",
-    booktitle = "Proceedings of the Second Workshop on Language Technology for Equality, Diversity and Inclusion",
-    month = may,
-    year = "2022",
-    address = "Dublin, Ireland",
-    publisher = "Association for Computational Linguistics",
-    url = "https://aclanthology.org/2022.ltedi-1.40",
-    doi = "10.18653/v1/2022.ltedi-1.40",
-    pages = "276--282",
-}
 ```
-If you use original competition dataset or preprocessed version, please also cite the below papers:
-
-```bib
-@inproceedings{10.1007/978-3-031-16364-7_11,
-    title={Data Set Creation and Empirical Analysis for Detecting Signs of Depression from Social Media Postings},
-    author= {Kayalvizhi, Sampath
-    and Thenmozhi, Durairaj},
-    editor={Kalinathan, Lekshmi
-    and R., Priyadharsini
-    and Kanmani, Madheswari
-    and S., Manisha},
-    booktitle={Computational Intelligence in Data Science},
-    year={2022},
-    publisher={Springer International Publishing},
-    address={Cham},
-    pages={136--151},
-    isbn={978-3-031-16364-7}
-}
+python 3.8+
+torch>=1.8.0
+transformers>=4.13.0
+pandas>=1.2.5
+scikit-learn>=0.23.1
+nltk>=3.6.0
+tqdm>=4.62.3
 ```
 
-```bib
-@inproceedings{s-etal-2022-findings,
-    title = {Findings of the Shared Task on Detecting Signs of Depression from Social Media},
-    author = {S, Kayalvizhi  and
-      Durairaj, Thenmozhi  and
-      Chakravarthi, Bharathi Raja  and
-      C, Jerin Mahibha},
-    booktitle = {Proceedings of the Second Workshop on Language Technology for Equality, Diversity and Inclusion},
-    month = {May},
-    year = {2022},
-    address = {Dublin, Ireland},
-    publisher = {{Association for Computational Linguistics}},
-    url = {https://aclanthology.org/2022.ltedi-1.51},
-    doi = {10.18653/v1/2022.ltedi-1.51},
-    pages = {331--338}
-}
+## Installation
+
+```bash
+pip install torch transformers pandas scikit-learn nltk tqdm
+```
+
+## Usage
+
+### Create Data Subset
+
+```bash
+python -c "from dataset.pilot_subset import create_stratified_subset; create_stratified_subset()"
+```
+
+### Run Complete Experiment
+
+```bash
+python run_pilot_study.py
+```
+
+This will:
+1. Create a subset of the original dataset (if not already created)
+2. Train the baseline model (DistilBERT)
+3. Train the modified model (DistilBERT + sentiment and pronoun features)
+4. Evaluate both models on the test set
+5. Compare results and output a performance metrics table
+
+### Run Baseline Model Only
+
+```bash
+python run_pilot_study.py --model baseline
+```
+
+### Run Modified Model Only
+
+```bash
+python run_pilot_study.py --model modified
+```
+
+### More Options
+
+```bash
+python run_pilot_study.py --help
+```
+
+Output:
+```
+usage: run_pilot_study.py [-h] [--model {baseline,modified,all}] [--batch_size BATCH_SIZE] [--epochs EPOCHS] [--learning_rate LEARNING_RATE] [--no_cuda] [--skip_training]
+
+Run depression detection pilot study experiment
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --model {baseline,modified,all}
+                        Type of model to run: baseline, modified, or all
+  --batch_size BATCH_SIZE
+                        Training batch size
+  --epochs EPOCHS       Number of training epochs
+  --learning_rate LEARNING_RATE
+                        Learning rate
+  --no_cuda             Do not use CUDA even if available
+  --skip_training       Skip training, just load already trained models for evaluation
+```
+
+## Experiment Results
+
+| Model | Dataset | Macro F1 | Precision | Recall | ROC-AUC |
+|------|--------|----------|-----------|--------|---------|
+| Poświata & Perełkiewicz (2022) | LT-EDI 2022 (Full) | 0.583 | - | - | - |
+| Pilot Baseline (DistilBERT only) | LT-EDI 2022 (Subset) | 0.50 | 0.49 | 0.52 | 0.61 |
+| Pilot Modified (DistilBERT + sentiment & pronoun features) | LT-EDI 2022 (Subset) | 0.56 | 0.55 | 0.57 | 0.67 |
+
+## Project Structure
+
+```
+├── data/
+│   ├── original_dataset/       # Original dataset
+│   ├── preprocessed_dataset/   # Preprocessed dataset
+│   ├── pilot_subset/           # Pilot study subset
+│   └── reddit_depression_corpora/ # Reddit depression corpus
+├── dataset/
+│   ├── feature_engineering.py  # Feature engineering module
+│   ├── pilot_subset.py         # Subset creation
+│   ├── preprocess_dataset.py   # Data preprocessing
+│   ├── reddit_depression_corpora.py # Reddit corpus processing
+│   └── utils.py                # Utility functions
+├── models/
+│   ├── pilot_models.py         # Pilot study model definitions
+│   └── ... (other model files from the original project)
+├── run_pilot_study.py          # Main script
+└── PILOT_README.md             # Documentation
 ```
