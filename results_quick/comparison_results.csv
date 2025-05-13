@@ -1,0 +1,4 @@
+model,dataset,macro_f1,precision,recall,roc_auc
+Reference Model (Theoretical),Full Dataset,0.583,,,
+Pilot Baseline (DistilBERT only),Sample Dataset (Small Subset),0.5004395604395604,0.4936363636363636,0.5271957671957671,0.6135064935064934
+Pilot Modified (DistilBERT + sentiment & pronoun features),Sample Dataset (Small Subset),0.542535584243628,0.5066666666666667,0.6309523809523809,0.702905844155844

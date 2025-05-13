@@ -1,8 +1,8 @@
 # Depression Detection Pilot Study
 
-This pilot study is an extension of the research by Poświata & Perełkiewicz (2022), aiming to verify the feasibility of data mining and text analytics for early depression risk detection from social media, and to test the effectiveness of adding engineered features to pre-trained language models.
+This project is an extension of the research by Poświata & Perełkiewicz (2022), aiming to verify the feasibility of data mining and text analytics for early depression risk detection from social media, and to test the effectiveness of adding engineered features to pre-trained language models.
 
-## Experiment Design
+## Project Overview
 
 This experiment consists of two main parts:
 
@@ -18,29 +18,51 @@ The experiment uses a subset of the LT-EDI 2022 shared task dataset (approximate
 
 ## Requirements
 
-```
-python 3.8+
-torch>=1.8.0
-transformers>=4.13.0
-pandas>=1.2.5
-scikit-learn>=0.23.1
-nltk>=3.6.0
-tqdm>=4.62.3
-```
+- Python 3.8+
+- CUDA-compatible GPU (optional, but recommended for faster training)
 
 ## Installation
 
+### Create Virtual Environment (Recommended)
+
 ```bash
+# Create virtual environment
+python -m venv depression_env
+
+# Activate virtual environment
+# Windows
+depression_env\Scripts\activate
+# Linux/Mac
+source depression_env/bin/activate
+```
+
+### Install Dependencies
+
+```bash
+# Install main dependencies
 pip install torch transformers pandas scikit-learn nltk tqdm
+# Install additional dependencies
+pip install numpy matplotlib seaborn
+# Download NLTK VADER lexicon (for sentiment analysis)
+python -c "import nltk; nltk.download('vader_lexicon')"
 ```
 
 ## Usage
 
-### Create Data Subset
+### Quick Pilot Study (For Initial Testing or Limited Resources)
+
+Use a smaller dataset and fewer training epochs to quickly evaluate model performance:
 
 ```bash
-python -c "from dataset.pilot_subset import create_stratified_subset; create_stratified_subset()"
+python run_quick_pilot.py
 ```
+
+This will:
+1. Create a small sample dataset from the original dataset
+2. Train the baseline model (DistilBERT) with fewer epochs
+3. Train the modified model (DistilBERT + sentiment and pronoun features)
+4. Evaluate both models on the test set
+5. Compare results and output a performance metrics table
 
 ### Run Complete Experiment
 
@@ -108,7 +130,37 @@ optional arguments:
 │   └── utils.py                # Utility functions
 ├── models/
 │   ├── pilot_models.py         # Pilot study model definitions
-│   └── ... (other model files from the original project)
-├── run_pilot_study.py          # Main script
-└── PILOT_README.md             # Documentation
+│   ├── transformers_models.py  # Transformer model implementations
+│   └── utils.py                # Model utility functions
+├── results_pilot/              # Complete pilot study results
+├── results_quick/              # Quick pilot study results
+├── trained_models/             # Saved trained models
+│   ├── pilot_baseline/         # Baseline model
+│   └── pilot_modified/         # Modified model
+├── run_pilot_study.py          # Main script for complete pilot study
+├── run_quick_pilot.py          # Script for quick pilot study
+├── create_realistic_data.py    # Create realistic data
+├── create_sample_data.py       # Create sample data
+└── generate_report.py          # Generate report
 ```
+
+## Troubleshooting
+
+1. **Out of Memory Error**: If you encounter memory issues, try reducing the `batch_size` parameter:
+   ```bash
+   python run_pilot_study.py --batch_size 8
+   ```
+
+2. **Slow Training**: If you don't have a GPU or training is slow, you can reduce the number of training epochs:
+   ```bash
+   python run_pilot_study.py --epochs 2
+   ```
+   
+3. **Quick Testing**: If you just want to quickly test model performance, run the quick pilot script:
+   ```bash
+   python run_quick_pilot.py
+   ```
+
+## References
+
+Poświata, R., & Perełkiewicz, M. (2022). OPI@LT-EDI-ACL2022: Detecting Signs of Depression from Social Media Text using RoBERTa Pre-trained Language Models. In *Proceedings of the Second Workshop on Language Technology for Equality, Diversity and Inclusion* (pp. 276-282).

@@ -18,8 +18,8 @@ trained_models/
 # data/
 
 # 结果文件（如果需要保留请删除这行）
-# results_pilot/
-results_quick/
+results_pilot/
+# results_quick/
 
 # 系统文件
 .DS_Store

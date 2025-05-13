@@ -1,0 +1,2 @@
+model,dataset,macro_f1,precision,recall,roc_auc
+Pilot Modified (DistilBERT + sentiment & pronoun features),Sample Dataset (Small Subset),0.542535584243628,0.5066666666666667,0.6309523809523809,0.702905844155844
