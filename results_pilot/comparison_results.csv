@@ -1,0 +1,4 @@
+model,dataset,macro_f1,precision,recall,roc_auc
+Poświata & Perełkiewicz (2022),LT-EDI 2022 (Full),0.583,,,
+Pilot Baseline (DistilBERT only),LT-EDI 2022 (Subset),1.0,1.0,1.0,1.0
+Pilot Modified (DistilBERT + sentiment & pronoun features),LT-EDI 2022 (Subset),1.0,1.0,1.0,1.0

@@ -18,6 +18,7 @@ def create_data_directories():
     os.makedirs("data/pilot_subset", exist_ok=True)
     os.makedirs("trained_models/pilot_baseline", exist_ok=True)
     os.makedirs("trained_models/pilot_modified", exist_ok=True)
+    os.makedirs("results_pilot", exist_ok=True)
 
 def run_pilot_study(args):
     """
@@ -117,6 +118,7 @@ def run_baseline_model(train_df, val_df, test_df, tokenizer, device, args):
     }
     
     pd.DataFrame([results]).to_csv("trained_models/pilot_baseline/results.csv", index=False)
+    pd.DataFrame([results]).to_csv("results_pilot/baseline_results.csv", index=False)
 
 def run_modified_model(train_df, val_df, test_df, tokenizer, feature_extractor, device, args):
     """
@@ -183,13 +185,14 @@ def run_modified_model(train_df, val_df, test_df, tokenizer, feature_extractor, 
     }
     
     pd.DataFrame([results]).to_csv("trained_models/pilot_modified/results.csv", index=False)
+    pd.DataFrame([results]).to_csv("results_pilot/modified_results.csv", index=False)
 
 def compare_results():
     """Compare results from different models"""
     try:
         # Load results
-        baseline_results = pd.read_csv("trained_models/pilot_baseline/results.csv")
-        modified_results = pd.read_csv("trained_models/pilot_modified/results.csv")
+        baseline_results = pd.read_csv("results_pilot/baseline_results.csv")
+        modified_results = pd.read_csv("results_pilot/modified_results.csv")
         
         # Merge results
         results = pd.concat([baseline_results, modified_results], ignore_index=True)
@@ -213,7 +216,7 @@ def compare_results():
         print(all_results.to_string(index=False))
         
         # Save comparison results
-        all_results.to_csv("trained_models/comparison_results.csv", index=False)
+        all_results.to_csv("results_pilot/comparison_results.csv", index=False)
         
         # Calculate improvement percentage
         if len(baseline_results) > 0 and len(modified_results) > 0:

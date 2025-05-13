@@ -3,7 +3,6 @@ import nltk
 import pandas as pd
 import numpy as np
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from nltk.tokenize import word_tokenize
 
 # Download required NLTK resources
 try:
@@ -78,7 +77,9 @@ class FeatureExtractor:
         """
         # Preprocess text: lowercase and tokenize
         text = text.lower()
-        tokens = word_tokenize(text)
+        
+        # 简单分词，避免使用nltk.word_tokenize
+        tokens = re.findall(r'\b\w+\b', text)
         
         # Calculate pronoun frequency
         total_words = len(tokens)

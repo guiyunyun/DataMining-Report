@@ -92,14 +92,6 @@ optional arguments:
   --skip_training       Skip training, just load already trained models for evaluation
 ```
 
-## Experiment Results
-
-| Model | Dataset | Macro F1 | Precision | Recall | ROC-AUC |
-|------|--------|----------|-----------|--------|---------|
-| Poświata & Perełkiewicz (2022) | LT-EDI 2022 (Full) | 0.583 | - | - | - |
-| Pilot Baseline (DistilBERT only) | LT-EDI 2022 (Subset) | 0.50 | 0.49 | 0.52 | 0.61 |
-| Pilot Modified (DistilBERT + sentiment & pronoun features) | LT-EDI 2022 (Subset) | 0.56 | 0.55 | 0.57 | 0.67 |
-
 ## Project Structure
 
 ```

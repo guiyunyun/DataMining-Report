@@ -1,0 +1,134 @@
+pid,text,labels
+dev_severe_84,I feel like a burden to everyone around me.,0
+dev_severe_92,"Everything feels like a struggle, I can't even get out of bed sometimes!",0
+dev_not_depression_1,Had some challenges today but managed to overcome them.,2
+dev_moderate_12,"Some I mean days are harder than others, but I'm managing.",1
+train_not_depression_30,Looking forward to my plans for the weekend.,2
+train_not_depression_121,Things are going well at work and home right now. ,2
+dev_not_depression_119,Had some challenges today but managed to overcome them. ,2
+train_moderate_34,I sometimes feel overwhelmed by small tasks.,1
+train_not_depression_85,Looking forward to my plans a bit for the weekend.,2
+train_moderate_13,"I've been isolating myself a bit lately, though I still see people?  ",1
+train_severe_36,I'm constantly tired and have no energy for anything?,0
+train_not_depression_216,Things are going well at work and home right now.,2
+train_moderate_149,"I've been isolating myself a bit lately, though I still see people? ",1
+train_not_depression_367,I've been working on a new project that's really interesting.,2
+train_moderate_244,"Some days are harder than others, but I'm managing.",1
+train_not_depression_197,Things are going well at work and home right now.,2
+train_not_depression_169,"I had a productive day today, feeling good about it? ",2
+train_severe_195,"I can't focus on anything, my mind is always foggy!",0
+train_moderate_18,I find it difficult to get motivated sometimes.  I've noticed this recently.,1
+train_moderate_200,"I don't enjoy things as much as I used to, but some things still make me happy...",1
+train_severe_198,I've lost interest in everything I used to enjoy.,0
+train_severe_266,I'm constantly tired and have no energy for anything?  Been like this for a while.,0
+train_severe_122,I've lost interest in everything I used to enjoy? ,0
+train_not_depression_141,I've been working on a new project that's really interesting.,2
+train_not_depression_153,Things are going well at work and home right now. ,2
+train_severe_249,"Nothing brings me joy anymore, everything feels empty.",0
+train_not_depression_158,Had some challenges today but managed to overcome them?,2
+train_severe_68,"I can't focus on anything, my mind is always foggy... ",0
+train_moderate_41,I sometimes feel overwhelmed by small tasks.,1
+dev_moderate_33,"I've been feeling down lately, but I still have good days. ",1
+train_severe_25,I keep thinking everyone would be better off without me! Just wanted to share that.,0
+train_not_depression_255,I've been working on a new project that's really interesting.,2
+train_severe_172,"Everything feels like a struggle, I can't even get out of bed sometimes.",0
+dev_not_depression_85,Things are going well at work and home right now.,2
+train_moderate_99,I find it difficult to actually get motivated sometimes.,1
+train_not_depression_7,"Spent time with friends this weekend, it was nice catching up... ",2
+dev_not_depression_98,I'm tired from work but satisfied with what I accomplished...  ,2
+dev_moderate_49,"I've been isolating myself a bit lately, though I still see people! ",1
+dev_severe_26,"Everything feels like a struggle, I can't even get out of bed sometimes... ",0
+train_moderate_288,"I don't enjoy things as much as I used to, but some things still make me happy.",1
+train_not_depression_375,I'm tired from work but satisfied with what I accomplished...,2
+train_moderate_90,"I don't enjoy things as much as I used to, but some things still make me happy.",1
+train_severe_100,I'm exhausted all the time no matter how much I sleep...,0
+train_not_depression_226,Had some challenges today but managed to overcome them.,2
+train_severe_201,"Nothing brings me joy anymore, everything feels empty!  This has been on my mind.",0
+train_moderate_100,I find it difficult to get motivated sometimes...,1
+train_severe_214,I'm constantly tired and have no energy for anything.,0
+train_severe_138,"Everything feels like a struggle, I can't even get out of bed sometimes!  This has been on my mind.",0
+train_severe_211,I've lost interest in everything I used to enjoy...,0
+train_severe_155,I feel completely hopeless these days.,0
+train_moderate_98,"Some days are harder than others, but I'm managing.",1
+train_not_depression_43,"I had a productive day today, feeling good about it.",2
+train_moderate_198,"I don't enjoy things as much as I used to, but some things still make me happy.",1
+dev_not_depression_126,Things are going well at work and home right now! ,2
+train_not_depression_300,I'm tired from work but satisfied with honestly what I accomplished.,2
+train_not_depression_182,Trying out a new hobby that's been fun to learn.,2
+train_not_depression_49,Had some challenges today but managed to overcome them...,2
+dev_moderate_38,"Some days are harder than really others, but I'm managing.",1
+dev_not_depression_120,I've been working on a new project that's really interesting. ,2
+train_not_depression_159,"Spent time with friends this weekend, it was nice catching up?",2
+train_not_depression_384,Had some challenges today but managed to overcome them! ,2
+train_not_depression_349,"Spent time with friends this weekend, it was nice catching up.",2
+train_severe_182,I'm constantly tired and have no energy for anything.,0
+train_severe_23,I'm exhausted honestly all the time no matter how much I sleep.,0
+dev_severe_49,I'm exhausted all the time no matter how much I sleep... ,0
+train_moderate_138,I'm not sleeping as well as I kind of used to.,1
+train_not_depression_381,Enjoying the little things in life lately! Been like this for a while.,2
+train_moderate_280,"Some days are harder than others, but I'm managing? ",1
+dev_severe_32,I feel completely hopeless these days.,0
+train_moderate_271,I sometimes feel actually overwhelmed by small tasks.,1
+train_not_depression_36,Had some challenges today but managed to overcome them?  This has been on my mind.,2
+dev_moderate_75,I'm not sleeping as well as I used to.,1
+dev_not_depression_106,Trying out a new hobby that's been fun to learn. This has been on my mind.,2
+train_moderate_69,My mood fluctuates a lot throughout the week... This has been on my mind.,1
+train_moderate_134,My mood fluctuates a lot throughout the week.,1
+train_not_depression_92,Things are going well at work and home right now.,2
+train_moderate_29,I'm not sleeping as well as I used to? ,1
+dev_moderate_29,I find it difficult to get motivated sometimes.,1
+dev_severe_19,I'm constantly tired and have no energy for anything! ,0
+dev_not_depression_11,Things are going well at work and home right now.  ,2
+train_not_depression_17,I'm tired from work but satisfied with what I accomplished.,2
+dev_severe_93,I don't see any sort of point in trying anymore.,0
+train_severe_55,I'm constantly tired and have no energy for anything... It's been an interesting experience.,0
+train_severe_126,I don't see any point in trying anymore.,0
+train_severe_275,I'm exhausted all the time no matter how much I sleep.,0
+train_not_depression_95,Enjoying the little things in sort of life lately.,2
+train_not_depression_78,"I a bit had a productive day today, feeling good about it.",2
+train_not_depression_365,Had some challenges today but managed to overcome them.,2
+train_not_depression_398,Enjoying the little things in life lately.  Been like this for a while.,2
+train_not_depression_103,"I had a productive day today, feeling good about it.",2
+train_severe_255,I feel completely hopeless these days.,0
+train_severe_290,"I can't focus on anything, my mind is always foggy?  It's been an interesting experience.",0
+train_severe_274,I feel like a burden to everyone around me.  ,0
+train_severe_131,I'm exhausted all the time no matter how much I sleep.,0
+train_severe_159,I feel completely hopeless these days?  ,0
+train_not_depression_344,Had a stressful day but feeling better after some relaxation...,2
+train_severe_32,"I can't focus on anything, my mind is always foggy!",0
+dev_moderate_5,I sometimes feel overwhelmed by small tasks.  ,1
+train_not_depression_39,Had a stressful day but feeling better after some relaxation.,2
+train_moderate_293,I find it difficult to get motivated sometimes.,1
+train_not_depression_113,"I had a productive day today, feeling good about it. ",2
+train_not_depression_368,Looking forward to my plans for the weekend! That's just how it is sometimes.,2
+train_severe_281,"Everything feels like a bit a struggle, I can't even get out of bed sometimes.",0
+dev_moderate_98,I'm not sleeping as well as I used to.,1
+dev_not_depression_117,"Spent time with friends this weekend, it was nice catching up.",2
+dev_severe_54,I feel like a burden to everyone around me.  Just wanted to share that.,0
+train_not_depression_269,"Spent time with friends this weekend, it was nice catching up.",2
+train_moderate_182,I feel tired more often than I should.,1
+dev_severe_12,"Nothing brings me joy anymore, everything feels empty.",0
+train_not_depression_126,Had some challenges today but managed to overcome them.,2
+train_not_depression_183,I've been working on a new project that's really interesting!,2
+train_moderate_175,I worry more than I should about things.,1
+dev_not_depression_75,Things are going well at work and home right now.,2
+train_moderate_140,I'm not sleeping as well as I used to.,1
+train_severe_70,"Nothing brings me joy anymore, everything feels empty.",0
+train_moderate_241,"I've been feeling down lately, but I still have good days.",1
+train_moderate_113,I feel tired more often than I should...,1
+train_moderate_253,I find it difficult to get motivated sometimes? ,1
+train_moderate_92,I find it difficult to get motivated sometimes? Not sure why I feel this way.,1
+train_not_depression_130,I've been working on a new project that's really interesting.,2
+train_not_depression_122,"I had a productive day today, feeling good about it...",2
+dev_not_depression_58,"Spent time with friends this weekend, it was nice catching up! This has been on my mind.",2
+train_severe_40,I'm constantly tired and have no I mean energy for anything.,0
+train_moderate_250,My mood fluctuates a lot throughout the week!,1
+train_moderate_161,I feel tired more often than I should.  This has been on my mind.,1
+dev_moderate_94,I find it difficult to get motivated sometimes.,1
+train_severe_12,I keep thinking everyone would be better off without me?,0
+dev_moderate_76,"I don't enjoy things as much as I used to, but some things still make me happy.  That's just how it is sometimes.",1
+dev_not_depression_18,Things are going well at work and home right now... Just wanted to share that.,2
+train_severe_259,I'm constantly tired and have no energy kind of for anything.,0
+dev_moderate_65,I sometimes feel overwhelmed by small tasks... This has been on my mind.,1
+train_not_depression_360,Trying out a new hobby that's been fun to learn.,2
+dev_not_depression_60,Enjoying the little things in life lately... ,2

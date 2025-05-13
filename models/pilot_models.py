@@ -3,12 +3,12 @@ import torch
 import numpy as np
 import pandas as pd
 from torch import nn
+from torch.optim import AdamW
 from torch.utils.data import Dataset, DataLoader
 from transformers import (
     DistilBertTokenizer, 
     DistilBertModel,
     DistilBertForSequenceClassification,
-    AdamW,
     get_linear_schedule_with_warmup
 )
 from sklearn.metrics import (
@@ -62,7 +62,7 @@ class DepressionDataset(Dataset):
         item = {
             'input_ids': encoding['input_ids'].flatten(),
             'attention_mask': encoding['attention_mask'].flatten(),
-            'label': torch.tensor(label, dtype=torch.long)
+            'labels': torch.tensor(label, dtype=torch.long)
         }
         
         # Add engineered features

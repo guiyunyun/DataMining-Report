@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 from sklearn.utils import shuffle
 
 
@@ -25,7 +26,8 @@ label_column_names = {
 
 
 def get_data(data_split, use_shuffle=False, without_label=False):
-    df = pd.read_csv(f'../data/original_dataset/{data_split}.tsv', sep='\t', header=0)
+    data_path = os.path.join('data', 'original_dataset', f'{data_split}.tsv')
+    df = pd.read_csv(data_path, sep='\t', header=0)
 
     pid_column = pid_column_names.get(data_split)
     text_column = text_column_names.get(data_split)
@@ -42,7 +44,8 @@ def get_data(data_split, use_shuffle=False, without_label=False):
 
 
 def get_preprocessed_data(data_split, use_shuffle=False):
-    df = pd.read_csv(f'../data/preprocessed_dataset/{data_split}.csv', header=0, lineterminator='\n')
+    data_path = os.path.join('data', 'preprocessed_dataset', f'{data_split}.csv')
+    df = pd.read_csv(data_path, header=0, lineterminator='\n')
     if use_shuffle:
         return shuffle(df)
     return df
