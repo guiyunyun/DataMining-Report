@@ -1,2 +1,0 @@
-model,dataset,macro_f1,precision,recall,roc_auc
-Pilot Modified (DistilBERT + sentiment & pronoun features),LT-EDI 2022 (Subset),1.0,1.0,1.0,1.0

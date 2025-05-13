@@ -1,2 +1,0 @@
-model,dataset,macro_f1,precision,recall,roc_auc
-Pilot Baseline (DistilBERT only),LT-EDI 2022 (Subset),1.0,1.0,1.0,1.0
