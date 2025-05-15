@@ -146,7 +146,7 @@ class PilotModelTrainer:
         self.include_features = include_features
         self.model.to(self.device)
         
-    def train(self, train_df, val_df, batch_size=16, epochs=3, learning_rate=2e-5):
+    def train(self, train_df, val_df, batch_size=16, epochs=10, learning_rate=2e-5):
         """
         Train the model
         

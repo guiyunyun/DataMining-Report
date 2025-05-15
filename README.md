@@ -153,7 +153,7 @@ optional arguments:
 
 2. **Slow Training**: If you don't have a GPU or training is slow, you can reduce the number of training epochs:
    ```bash
-   python run_pilot_study.py --epochs 2
+   python run_pilot_study.py --epochs 10
    ```
    
 3. **Quick Testing**: If you just want to quickly test model performance, run the quick pilot script:

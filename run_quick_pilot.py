@@ -51,7 +51,7 @@ def run_pilot_study():
     
     # 修改参数为所需值
     batch_size = 16
-    epochs = 2
+    epochs = 10
     learning_rate = 2e-5
     max_seq_length = 64  # 保持较合理的序列长度
     
